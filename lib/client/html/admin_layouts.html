@@ -1,0 +1,102 @@
+<template name="AdminLayout">
+  {{#if AdminConfig}}
+  {{#if isInRole 'admin'}}
+  <div class="admin-layout">
+    {{# AdminLTE skin=admin_skin }}
+      {{> AdminHeader }}
+      {{> AdminSidebar }}
+      <div class="content-wrapper" style="min-height: {{minHeight}}">
+        <section class="content-header">
+          <h1>
+            {{$.Session.get 'admin_title'}}
+            <small>{{$.Session.get 'admin_subtitle'}}</small>
+          </h1>
+          <ol class="breadcrumb">
+            <li><a href="/admin/">仪表盘</a></li>
+            {{#if $.Session.get 'admin_collection_name'}}
+              <li><a href="/admin/{{$.Session.get 'admin_collection_name'}}/">
+                {{adminCollectionLabel admin_collection_name}}
+              </a></li>
+            {{/if}}
+
+            {{#if $.Session.equals 'admin_collection_page' 'new'}}
+              <li>新增</li>
+            {{/if}}
+
+            {{#if $.Session.equals 'admin_collection_page' 'edit'}}
+              <li>编辑</li>
+            {{/if}}
+          </ol>
+        </section>
+        <section class="content">
+          {{> yield }}
+        </section>
+      </div>
+    {{/ AdminLTE }}
+  </div>
+  {{> AdminDeleteModal }}
+  {{else}}
+  {{> NotAdmin}}
+  {{/if}}
+  {{else}}
+  {{> NoConfig}}
+  {{/if}}
+</template>
+
+<template name="AdminDeleteModal">
+  <div class="modal fade" id="admin-delete-modal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">确认删除</h4>
+        </div>
+        <div class="modal-body">
+          <p>你确定删除改项吗?</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+          <button type="button" id="confirm-delete" class="btn btn-danger">删除</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+</template>
+
+<template name="NotAdmin">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 col-md-offset-4">
+        <p class="alert alert-info" style="margin-top:100px;">
+          对不起，该页仅管理员可见。
+        </p>
+      </div>
+    </div>
+  </div>
+</template>
+
+<template name="NoConfig">
+  <p class="alert alert-info">
+    你需要先定义一个 AdminConfig 的配置对象。
+    <br/>
+      一个最基础的包含模型 'Posts' 和 'Comments' 的配置文件如下:
+    <br/>
+    <code>
+      AdminConfig = {
+        <br/>
+        adminEmails: ['	ben@code2create.com'],
+        <br/>
+        collections:
+        <br/>
+        {
+          <br/>
+          Posts: {},
+          <br/>
+          Comments: {}
+          <br/>
+        }
+        <br/>
+      }
+    </code>
+  </p>
+</template>
