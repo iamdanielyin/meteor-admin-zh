@@ -1,6 +1,8 @@
 Meteor Admin
 ============
-`$ meteor add yinfx:admin-zh`
+`$ meteor add yinfx:admin-zh`  
+
+[yogiben:admin](https://atmospherejs.com/yogiben/admin)的中文版
 
 To get a working example, clone and run my [Meteor starter](https://github.com/yogiben/meteor-starter) repo and then go to `/admin`.
 
