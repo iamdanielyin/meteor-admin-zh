@@ -1,6 +1,6 @@
 Package.describe({
   name: "yinfx:admin-zh",
-  summary: "A complete admin dashboard solution",
+  summary: "一个完整的后台管理解决方案",
   version: "1.2.6",
   git: "https://github.com/yinfxs/meteor-admin-zh"
 });
