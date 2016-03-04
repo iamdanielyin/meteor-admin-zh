@@ -4,8 +4,12 @@ Meteor Admin 中文版
 
 [yogiben:admin](https://atmospherejs.com/yogiben/admin)的中文版
 
-**Feedback Welcome.** Please create an issue.
+![主页](./readme/admin-zh-home.png)
 
-![alt tag](https://raw.githubusercontent.com/yogiben/meteor-admin/master/readme/screenshot1.png)
+![列表](./readme/admin-zh-list.png)
 
-![alt tag](https://raw.githubusercontent.com/yogiben/meteor-admin/master/readme/screenshot2.png)
+![新增](./readme/admin-zh-new.png)
+
+![修改](./readme/admin-zh-edit.png)
+
+![删除](./readme/admin-zh-del.png)
