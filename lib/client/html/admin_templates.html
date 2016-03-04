@@ -114,7 +114,7 @@
 				<input value="{{admin_current_id}}" type="text" name="_id" omitfields="createdAtupdatedAt" required="" data-schema-key="_id" class="form-control" autocomplete="off" />
 				<span class="help-block"></span>
 			</div>
-			<p>Send a reset password email to {{admin_current_doc.emails.[0].address}}</p>
+			<p>发送邮件到 {{admin_current_doc.emails.[0].address}} 可重置密码</p>
 			<button type="submit" class="btn btn-primary btn-sm">发送验证邮件</button>
 			{{/autoForm}}
 
