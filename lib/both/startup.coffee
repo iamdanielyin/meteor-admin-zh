@@ -87,7 +87,7 @@ adminCreateRouteViewOptions = (collection, collectionName) ->
 			@render()
 		onAfterAction: ->
 			Session.set 'admin_title', collectionName
-			Session.set 'admin_subtitle', 'View'
+			Session.set 'admin_subtitle', '视图'
 			Session.set 'admin_collection_name', collectionName
 			collection.routes?.view?.onAfterAction
 	_.defaults options, collection.routes?.view
