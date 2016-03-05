@@ -13,3 +13,5 @@ Meteor Admin 中文版
 ![修改](./readme/admin-zh-edit.png)
 
 ![删除](./readme/admin-zh-del.png)
+
+* 示例项目：[https://github.com/yinfxs/meteor-admin-zh-demo.git](https://github.com/yinfxs/meteor-admin-zh-demo.git)
