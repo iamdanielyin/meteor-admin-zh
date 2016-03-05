@@ -52,10 +52,10 @@ AdminDashboard =
 AdminDashboard.schemas.newUser = new SimpleSchema
 	email: 
 		type: String
-		label: "Email address"
+		label: "邮箱地址"
 	chooseOwnPassword:
 		type: Boolean
-		label: 'Let this user choose their own password with an email'
+		label: '通过验证邮件设置账户密码'
 		defaultValue: true
 	password:
 		type: String
@@ -63,7 +63,7 @@ AdminDashboard.schemas.newUser = new SimpleSchema
 		optional: true
 	sendPassword:
 		type: Boolean
-		label: 'Send this user their password by email'
+		label: '发送密码到邮箱'
 		optional: true
 
 AdminDashboard.schemas.sendResetPasswordEmail = new SimpleSchema
